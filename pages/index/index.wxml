@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container" style="background-color:{{containerBackgroundColor}}">
+  <view class="gifView" bindlongpress='changeAnimation'>
+    <image src='{{gifViewSRC}}' mode='aspectFit'></image>
+  </view>
+  <view class="record">
+    <view class='circle-outside'></view>
+    <view class='circle-inside' catchtouchstart='startRecord' catchtouchend='stopRecord'></view>
+  </view>
+</view>
