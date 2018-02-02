@@ -1,8 +1,8 @@
 <!--index.wxml-->
 <view class="container" style="background-color:{{containerBackgroundColors[currentIndex]}}">
   <swiper indicator-dots="{{false}}" autoplay="{{false}}" current="{{currentIndex}}" bindchange="onSliderChange">
-    <block wx:for="{{characters}}">
-      <swiper-item>
+    <block wx:for="{{characters}}" wx:key="*this">
+      <swiper-item width="100%">
         <image src="{{item}}" class="slide-image" mode='aspectFit'/>
       </swiper-item>
     </block>
