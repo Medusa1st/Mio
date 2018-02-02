@@ -1,8 +1,12 @@
 <!--index.wxml-->
-<view class="container" style="background-color:{{containerBackgroundColor}}">
-  <view class="gifView" bindlongpress='changeAnimation'>
-    <image src='{{gifViewSRC}}' mode='aspectFit'></image>
-  </view>
+<view class="container" style="background-color:{{containerBackgroundColors[currentIndex]}}">
+  <swiper indicator-dots="{{false}}" autoplay="{{false}}" current="{{currentIndex}}" bindchange="onSliderChange">
+    <block wx:for="{{characters}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode='aspectFit'/>
+      </swiper-item>
+    </block>
+  </swiper>
   <view class="record">
     <view class='circle-outside'></view>
     <view class='circle-inside' catchtouchstart='startRecord' catchtouchend='stopRecord'></view>
