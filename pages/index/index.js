@@ -38,11 +38,30 @@ Page({
     wx.startRecord({
       success: function (res) {
         var tempFilePath = res.tempFilePath
+        wx.uploadFile({
+          url: 'http://127.0.0.1:3000/upload', //仅为示例，非真实的接口地址
+          filePath: tempFilePath,
+          name: 'sampleFile',
+          formData: {
+            'user': 'test'
+          },
+          success: function (res) {
+            var data = res.data
+            console.log(res)
+            //do something
+          }
+        })
         wx.playVoice({
           filePath: tempFilePath,
           complete: function () {
           }
         })
+      },
+      fail: function(res) {
+        console.log(res)
+      },
+      complete: function (res) {
+        console.log(res)
       }
     })
   },
