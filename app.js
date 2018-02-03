@@ -1,5 +1,14 @@
 //app.js
 App({
+  onShow: function (options) {
+    console.log(options)
+    options.query.id && 
+    wx.showToast({
+      title: options.query.id + '',
+      icon: 'success',
+      duration: 1000
+    }) 
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

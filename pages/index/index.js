@@ -3,10 +3,26 @@
 const app = getApp()
 
 Page({
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '老胖子你好',
+      path: '/pages/index/index?id=111',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
   data: {
     containerBackgroundColors: [
-      '#fdacad',
-      '#81C7D4'
+      '#fff',
+      '#fff'
     ],
     characters: [
       '/assets/cats/red-cat.gif',
@@ -22,7 +38,7 @@ Page({
   },
   changeAnimation: function() {
     wx.setNavigationBarColor({
-      frontColor: '#ffffff',
+      frontColor: '#000',
       backgroundColor: this.data.containerBackgroundColors[this.data.currentIndex],
       animation: {
         duration: 500,
