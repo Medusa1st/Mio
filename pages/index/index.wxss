@@ -4,7 +4,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: space-between;
   padding: 150rpx 0;
   box-sizing: border-box;
@@ -17,21 +16,23 @@
 }
 
 .circle-outside{
-  border-radius:29px; 
-  width:50px; 
-  height:50px; 
-  border:4px solid #aa2329;
+  position: relative;
+  border-radius:50%; 
+  width:100rpx; 
+  height:100rpx; 
+  border:8rpx solid #aa2329;
 }
 .circle-inside{
-  position: relative;
-  top: -49px;
-  height: 36px;
-  width: 36px; 
-  border: 2px solid #eb232e;
-  border-radius: 20px;
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  height: 72rpx;
+  width: 72rpx; 
+  border: 4rpx solid #eb232e;
+  border-radius: 50%;
   background-color: #eb232e;
 } 
 swiper {
-  height: 240px;
+  height: 480rpx;
   text-align: center;
 }

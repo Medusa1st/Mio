@@ -8,7 +8,8 @@
     </block>
   </swiper>
   <view class="record">
-    <view class='circle-outside'></view>
-    <view class='circle-inside' catchtouchstart='startRecord' catchtouchend='stopRecord'></view>
+    <view class='circle-outside'>
+      <view class='circle-inside' catchtouchstart='startRecord' catchtouchend='stopRecord'></view>
+    </view>
   </view>
 </view>
