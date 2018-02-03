@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper indicator-dots="{{false}}" autoplay="{{false}}" current="{{currentIndex}}" bindchange="onSliderChange">
+    <block wx:for="{{characters}}" wx:key="*this">
+      <swiper-item width="100%">
+        <image src="{{item}}" class="slide-image" mode='aspectFit'/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="record">
+    <view class='circle-outside'>
+      <view class='circle-inside' catchtouchstart='startRecord' catchtouchend='stopRecord'></view>
+    </view>
+  </view>
+  <view>
+    <text wx:for="{{recordPaths}}" wx:key="*this">{{item}}</text>
+  </view>
+</view>

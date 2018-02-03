@@ -1,13 +1,16 @@
 //app.js
 App({
   onShow: function (options) {
-    console.log(options)
-    options.query.id && 
-    wx.showToast({
-      title: options.query.id + '',
-      icon: 'success',
-      duration: 1000
-    }) 
+    if(options.query.id) {
+      wx.showModal({
+        title: 'query data',
+        content: JSON.stringify(options.query),
+        icon: 'success',
+        duration: 3000
+      })
+    }
+    // 设置默认显示第几个猫咪
+    this.globalData.defaultCat = options.query.cat || 0
   },
   onLaunch: function () {
     // 展示本地存储能力
@@ -42,6 +45,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: {
+      nickName: '你的喵语'
+    },
+    defaultCat: 0
   }
 })

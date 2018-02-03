@@ -1,5 +1,5 @@
-<!--index.wxml-->
-<view class="container" style="background-color:{{containerBackgroundColors[currentIndex]}}">
+<!-- play.wxml -->
+<view class="container">
   <swiper indicator-dots="{{false}}" autoplay="{{false}}" current="{{currentIndex}}" bindchange="onSliderChange">
     <block wx:for="{{characters}}" wx:key="*this">
       <swiper-item width="100%">
@@ -7,9 +7,4 @@
       </swiper-item>
     </block>
   </swiper>
-  <view class="record">
-    <view class='circle-outside'>
-      <view class='circle-inside' catchtouchstart='startRecord' catchtouchend='stopRecord'></view>
-    </view>
-  </view>
 </view>

@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/record/record",
+    "pages/play/play"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -10,14 +10,20 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+    "color": "#2c2c2c",
+    "selectedColor": "#1296db",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页"
+        "pagePath": "pages/record/record",
+        "text": "Record",
+        "iconPath": "/assets/icons/record_default.png",
+        "selectedIconPath": "/assets/icons/record_selected.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "pagePath": "pages/play/play",
+        "text": "Play",
+        "iconPath": "/assets/icons/play_default.png",
+        "selectedIconPath": "/assets/icons/play_selected.png"
       }
     ]
   }

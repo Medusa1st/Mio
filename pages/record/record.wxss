@@ -7,6 +7,7 @@
   justify-content: space-between;
   padding: 150rpx 0;
   box-sizing: border-box;
+  background-color: #fff;
 } 
 
 .record{
