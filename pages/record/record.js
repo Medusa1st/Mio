@@ -55,19 +55,19 @@ Page({
         _this.setData({
           recordPaths: _this.data.recordPaths.concat([tempFilePath.substr(11, 5)])
         })
-        // wx.uploadFile({
-        //   url: 'http://127.0.0.1:3000/upload', //仅为示例，非真实的接口地址
-        //   filePath: tempFilePath,
-        //   name: 'sampleFile',
-        //   formData: {
-        //     'user': 'test'
-        //   },
-        //   success: function (res) {
-        //     var data = res.data
-        //     console.log(res)
-        //     //do something
-        //   }
-        // })
+        wx.uploadFile({
+          url: 'http://127.0.0.1:3000/upload', //仅为示例，非真实的接口地址
+          filePath: tempFilePath,
+          name: 'sampleFile',
+          formData: {
+            'user': 'test'
+          },
+          success: function (res) {
+            var data = res.data
+            console.log(res)
+            //do something
+          }
+        })
         wx.playVoice({
           filePath: tempFilePath,
           complete: function () {
