@@ -10,7 +10,7 @@ Page({
     }
     return {
       title: `一条来自${app.globalData.userInfo.nickName}的祝福`,
-      path: `/pages/play/play?id=${this.data.currentIndex}&cat=${this.data.currentIndex}`,
+      path: `/pages/play/play?id=${this.data.recordPaths}&cat=${this.data.currentIndex}`,
       success: function (res) {
         // 转发成功
       },
@@ -25,7 +25,8 @@ Page({
       '/assets/cats/blue-cat.gif'
     ],
     currentIndex: 0,
-    recordPaths: []
+    recordPaths: [],
+    uploadStatus: ''
   },
   onSliderChange: function(e) {
     this.setData({
@@ -53,12 +54,13 @@ Page({
       success: function (res) {
         var tempFilePath = res.tempFilePath
         _this.setData({
-          recordPaths: _this.data.recordPaths.concat([tempFilePath.substr(11, 5)])
+          // recordPaths: _this.data.recordPaths.concat([tempFilePath.substr(11, 5)])
+          recordPaths: "https://medusa1st.me/projects/mio/uploads/" + tempFilePath.substr(9)
         })
         wx.uploadFile({
-          url: 'http://127.0.0.1:3000/upload', //仅为示例，非真实的接口地址
+          url: 'https://medusa1st.me/projects/mio/upload.php', //仅为示例，非真实的接口地址
           filePath: tempFilePath,
-          name: 'sampleFile',
+          name: 'myFile',
           formData: {
             'user': 'test'
           },
@@ -66,6 +68,13 @@ Page({
             var data = res.data
             console.log(res)
             //do something
+            _this.setData({
+              // recordPaths: _this.data.recordPaths.concat([tempFilePath.substr(11, 5)])
+              uploadStatus: res.data
+            })
+          },
+          fail: function (res) {
+            console.log(res.errMsg)
           }
         })
         wx.playVoice({

@@ -12,7 +12,10 @@
       <view class='circle-inside' catchtouchstart='startRecord' catchtouchend='stopRecord'></view>
     </view>
   </view>
-  <view>
+  <!-- <view>
     <text wx:for="{{recordPaths}}" wx:key="*this">{{item}}</text>
   </view>
+    <view>
+    <text>{{uploadStatus}}</text>
+  </view> -->
 </view>

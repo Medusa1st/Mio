@@ -3,16 +3,25 @@
 const app = getApp()
 
 Page({
-  onLoad: function() {
+  onLoad: function (option) {
     var _this = this
-
+    console.log(option.id)
     wx.downloadFile({
-      url: 'http://127.0.0.1:3000/public/imgs/1.png',
+      url: option.id,
       success: function (res) {
+
+        var tempFilePath = res.tempFilePath
+
         console.log('downloadFile success, res is', res)
 
         _this.setData({
-          audioPath: res.tempFilePath
+          audioPath: tempFilePath
+        })
+        //下载文件成功，播放录音
+        wx.playVoice({
+          filePath: tempFilePath,
+          complete: function () {
+          }
         })
       },
       fail: function ({ errMsg }) {

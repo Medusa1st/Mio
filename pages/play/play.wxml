@@ -7,5 +7,5 @@
       </swiper-item>
     </block>
   </swiper>
-  <image src="{{audioPath}}" class="slide-image" mode='aspectFit'/>
+   <!-- <image src="{{audioPath}}" class="slide-image" mode='aspectFit'/>  -->
 </view>
